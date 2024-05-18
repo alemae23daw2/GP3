@@ -108,19 +108,41 @@ window.onload = () =>{
         d3.json("europe.geojson").then(function (geo) {
             d3.csv("data.csv").then(function (data) {
                 svg.selectAll("*").remove();
+                var highestDataValue;
+                var highestCountry;
+                var lowestDataValue;
+                var lowestCountry;
                 for (var i = 0; i < data.length; i++) {
                     if(data[i].date == any && data[i].sex == sexe && data[i].age == edat && data[i].isced11 == educacio){
                         var codiPaisCSV = data[i].geography;
-                        var dataValue = data[i].value;
+                        var dataValue = parseFloat(data[i].value);
                         for (var j = 0; j < geo.features.length; j++) {
                             var codiPaisJSON = geo.features[j].properties.ISO2;
                             if (codiPaisCSV == codiPaisJSON) {
                                 geo.features[j].properties.value = dataValue;
+                                if(j == 0){
+                                    highestDataValue = dataValue;
+                                    lowestDataValue = dataValue;
+                                }
+                                if(dataValue > highestDataValue){
+                                    highestDataValue = dataValue;
+                                    highestCountry = geo.features[j].properties.NAME;
+                                }
+                                if(dataValue < lowestDataValue){
+                                    lowestDataValue = dataValue;
+                                    lowestCountry = geo.features[j].properties.NAME;
+                                }
                                 break;
                             }
                         }
                     }
                 }
+                document.querySelector("#min").
+                document.querySelector("#max").
+                console.log(highestDataValue);
+                console.log(highestCountry);
+                console.log(lowestDataValue);
+                console.log(lowestCountry);
         
                 projection.fitSize([width, height], geo);
         
