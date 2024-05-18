@@ -1,71 +1,83 @@
-    html {
-        background-image: url(crossword.png);
-    }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-    }
+html {
+    background-image: url(crossword.png);
+}
 
-    nav {
-        background-color: #333;
-        color: #fff;
-        padding: 1em;
-        display: flex;
-        justify-content: center;
-        column-gap: 100px;
-        align-items: center;
-    }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
-    nav a {
-        color: #fff;
-        text-decoration: none;
-        padding: 0.5em 1em;
-        transition: background-color 0.3s;
-    }
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    column-gap: 100px;
+    align-items: center;
+}
 
-    nav a:hover {
-        background-color: #575757;
-    }
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    transition: background-color 0.3s;
+}
 
-    #mapa{
-        margin: 1% auto;
-        width: 800px;
-        height: 600px;
-    }
+nav a:hover {
+    background-color: #575757;
+}
 
-    #buscadors{
-        position: absolute;
-    }
+#mapa{
+    margin: 1% auto;
+    width: 800px;
+    height: 600px;
+}
 
-    select {
-        padding: 8px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 16px;
-        margin-bottom: 10px;
-        width: 200px;
-    }
-    
-    #max{
-        top: 45%;
-        position: absolute;
-        width: 20%;
-        background-color: #f2f2f2;
-        padding: 10px;
-        margin-bottom: 20px;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    
-    #min {
-        top: 50%;
-        position: absolute;
-        width: 20%;
-        background-color: #f2f2f2;
-        padding: 10px;
-        margin-bottom: 20px;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
+#buscadors{
+    position: absolute;
+}
+
+select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    width: 200px;
+}
+
+#minmax{
+    top: 30%;
+    position: absolute;
+    width: 250px;
+}
+
+#minmax #max,
+#minmax #min{
+    margin-top: 50px;
+}
+
+#minmax #max div,
+#minmax #min div{
+    margin-left: 60px;
+}
+
+#minmax #max span,
+#minmax #min span{
+    font-size: 2rem;
+    color: rgb(80, 79, 79);
+}
+
+#minmax #max img,
+#minmax #min img{
+    margin-top: 5px;
+    float: left;
+}

@@ -8,31 +8,32 @@ window.onload = () =>{
     mapa();
 
     var colores = new Array(
-        "#b3ffb3",
-        "#99ff99",
-        "#80ff80",
-        "#66ff66",
-        "#4dff4d",
-        "#33ff33",
-        "#1aff1a",
-        "#00ff00",
-        "#00e600",
-        "#00cc00",
-        "#00b300",
-        "#009900",
-        "#008000",
-        "#006600",
-        "#004d00",
-        "#003300",
-        "#001a00",
-        "#001000",
-        "#000800",
-        "#000600"
+        "#1CC11E",
+        "#29C726",
+        "#36CD2E",
+        "#43D336",
+        "#50D93E",
+        "#5DDF46",
+        "#6AE54E",
+        "#77EB56",
+        "#84F15E",
+        "#91F766",
+        "#9FFF6E",
+        "#AFFF76",
+        "#BFFF7E",
+        "#CFFF86",
+        "#DFFF8E",
+        "#EFFF96",
+        "#FFFF9E",
+        "#FFFFA6",
+        "#FFFFAE",
+        "#FFFFB6",
+        "#FF7961"
     );
     
     function getColor(d) {
-        return d == "" 
-        ? "red" 
+        return isNaN(d)
+        ? colores[20] 
             :d > 1900
                 ? colores[19]
                 : d > 1800
@@ -137,8 +138,10 @@ window.onload = () =>{
                         }
                     }
                 }
-                document.querySelector("#min").
-                document.querySelector("#max").
+                document.querySelector("#max #valor").innerHTML = highestDataValue;
+                document.querySelector("#min #valor").innerHTML = lowestDataValue;
+                document.querySelector("#max #pais").innerHTML = highestCountry;
+                document.querySelector("#min #pais").innerHTML = lowestCountry;
                 console.log(highestDataValue);
                 console.log(highestCountry);
                 console.log(lowestDataValue);
