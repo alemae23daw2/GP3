@@ -43,6 +43,7 @@ nav a:hover {
 
 #buscadors{
     margin-top: 2%;
+    margin-left: 2%;
     position: absolute;
 }
 
@@ -61,9 +62,10 @@ select {
 }
 
 #minmax{
-    top: 40%;
+    top: 42%;
     position: absolute;
     width: 250px;
+    left: 1%;
 }
 
 #minmax #max,
