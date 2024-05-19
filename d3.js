@@ -1,11 +1,12 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
-window.onload = () =>{
+window.onload = () => {
 
     var any = 2000;
     var sexe = "F";
     var edat = "Y15-19";
     var educacio = "ED0-2";
     mapa();
+    busqueda();
 
     var colores = new Array(
         "#1CC11E",
@@ -30,72 +31,81 @@ window.onload = () =>{
         "#FFFFB6",
         "#FF7961"
     );
-    
+
     function getColor(d) {
-        return isNaN(d)
-        ? colores[20] 
-            :d > 1900
-                ? colores[19]
-                : d > 1800
-                    ? colores[18]
-                    : d > 1700
-                        ? colores[17]
-                        : d > 1600
-                            ? colores[16]
-                            : d > 1500
-                                ? colores[15]
-                                : d > 1400
-                                    ? colores[14]
-                                    : d > 1300
-                                        ? colores[13]
-                                        : d > 1200
-                                            ? colores[12]
-                                            : d > 1100
-                                                ? colores[11]
-                                                : d > 1000
-                                                    ? colores[10]
-                                                    : d > 900
-                                                        ? colores[9]
-                                                        : d > 800
-                                                            ? colores[8]
-                                                            : d > 700
-                                                                ? colores[7]
-                                                                : d > 600
-                                                                    ? colores[6]
-                                                                    : d > 500
-                                                                        ? colores[5]
-                                                                        : d > 400
-                                                                            ? colores[4]
-                                                                            : d > 300
-                                                                                ? colores[3]
-                                                                                : d > 200
-                                                                                    ? colores[2]
-                                                                                    : d > 100
-                                                                                        ? colores[1]
-                                                                                        : colores[0];
-    }
+        if (isNaN(d)) {
+            return colores[20];
+        }
     
+        const umbrales = [1900, 1800, 1700, 1600, 1500, 1400, 1300, 1200, 1100, 1000, 900, 800, 700, 600, 500, 400, 300, 200, 100];
+        for (let i = 0; i < umbrales.length; i++) {
+            if (d > umbrales[i]) {
+                return colores[19 - i];
+            }
+        }
+    
+        return colores[0];
+    }
+
+    function busqueda(){
+        let sexeMostrar = sexe == "F" ? "femení" : "masculí";
+        let regex = /Y(\d+)-(\d+)/;
+        let edats = edat.match(regex);
+        let educacioMostrar
+        switch (educacio) {
+            case "ED0-2":
+                educacioMostrar = "la educació primaria o inferior";
+                break;
+            case "ED3_4":
+                educacioMostrar = "secundaria i bachillerat o equivalents";
+                break;
+            case "ED5-8":
+                educacioMostrar = "universitat, cicles superiors, master, doctorats o equivalents";
+                break;
+            case "TOTAL":
+                educacioMostrar = "cualsevol tipus d'educació oficial";
+                break;
+        }
+        document.querySelector(".busqueda").innerHTML="Filtrant dades de l'any " + any + 
+        " per sexe " + sexeMostrar + " de entre " + edats[1] + " i " + edats[2] + " anys que tinguin " + educacioMostrar;
+    }
+
     let any_select = document.getElementById("any");
-    any_select.addEventListener("change", () =>{
+    any_select.addEventListener("change", () => {
         any = any_select.value;
         mapa();
+        busqueda();
     });
 
     let sexe_select = document.getElementById("sexe");
-    sexe_select.addEventListener("change", () =>{
+    sexe_select.addEventListener("change", () => {
         sexe = sexe_select.value;
         mapa();
+        busqueda();
     });
 
     let educacio_select = document.getElementById("educacio");
-    educacio_select.addEventListener("change", () =>{
+    educacio_select.addEventListener("change", () => {
         educacio = educacio_select.value;
         mapa();
+        busqueda();
     });
 
+    let edat_select = document.getElementById("edat");
+    edat_select.addEventListener("change", () => {
+        edat = edat_select.value;
+        mapa();
+        busqueda();
+    });
+
+    var div = d3
+        .select("body")
+        .append("div")
+        .attr("class", "tooltip")
+        .attr("opacity", 0);
 
     var width = 800;
-    var height = 600;
+    var height = 500;
 
     var svg = d3.select("#mapa")
         .append("svg")
@@ -105,31 +115,27 @@ window.onload = () =>{
     var projection = d3.geoMercator();
     var path = d3.geoPath().projection(projection);
 
-    function mapa(){
+    function mapa() {
         d3.json("europe.geojson").then(function (geo) {
             d3.csv("data.csv").then(function (data) {
                 svg.selectAll("*").remove();
-                var highestDataValue;
+                var highestDataValue = -Infinity;
                 var highestCountry;
-                var lowestDataValue;
+                var lowestDataValue = Infinity;
                 var lowestCountry;
                 for (var i = 0; i < data.length; i++) {
-                    if(data[i].date == any && data[i].sex == sexe && data[i].age == edat && data[i].isced11 == educacio){
+                    if (data[i].date == any && data[i].sex == sexe && data[i].age == edat && data[i].isced11 == educacio) {
                         var codiPaisCSV = data[i].geography;
                         var dataValue = parseFloat(data[i].value);
                         for (var j = 0; j < geo.features.length; j++) {
                             var codiPaisJSON = geo.features[j].properties.ISO2;
                             if (codiPaisCSV == codiPaisJSON) {
                                 geo.features[j].properties.value = dataValue;
-                                if(j == 0){
-                                    highestDataValue = dataValue;
-                                    lowestDataValue = dataValue;
-                                }
-                                if(dataValue > highestDataValue){
+                                if (dataValue > highestDataValue) {
                                     highestDataValue = dataValue;
                                     highestCountry = geo.features[j].properties.NAME;
                                 }
-                                if(dataValue < lowestDataValue){
+                                if (dataValue < lowestDataValue) {
                                     lowestDataValue = dataValue;
                                     lowestCountry = geo.features[j].properties.NAME;
                                 }
@@ -142,13 +148,9 @@ window.onload = () =>{
                 document.querySelector("#min #valor").innerHTML = lowestDataValue;
                 document.querySelector("#max #pais").innerHTML = highestCountry;
                 document.querySelector("#min #pais").innerHTML = lowestCountry;
-                console.log(highestDataValue);
-                console.log(highestCountry);
-                console.log(lowestDataValue);
-                console.log(lowestCountry);
-        
+
                 projection.fitSize([width, height], geo);
-        
+
                 svg.selectAll("path")
                     .data(geo.features)
                     .enter()
@@ -160,8 +162,39 @@ window.onload = () =>{
                     .attr("stroke", "black")
                     .attr("fill-opacity", "1")
                     .attr("stroke", "#202020")
-                    .attr("stroke-width", 0.3);
-        
+                    .attr("stroke-width", 0.3)
+                    .on("mouseover", mouseover)
+                    .on("mousemove", mousemove)
+                    .on("mouseout", mouseout);
+
+                function mouseover(event, d) {
+                    let valor = d.properties.value || "No hi ha dades";
+                    d3.select(this)
+                        .attr("stroke-width", "1px")
+                        .attr("fill-opacity", "0.9");
+                    div.style("opacity", 0.9)
+                        .html(
+                            "<b style='color: grey;'>" +
+                            d.properties.NAME +
+                            "</b>" + "<br>" +
+                            "<b style='color: grey;'>" + "Nivell mig d'educació: " +
+                            valor +
+                            "</b>"
+                        );
+                }
+                
+                function mousemove(event, d) {
+                    div.style("left", (event.pageX + 10) + "px")
+                        .style("top", (event.pageY - 10) + "px");
+                }
+                
+                function mouseout(event, d) {
+                    d3.select(this)
+                        .attr("stroke-width", "0.3px")
+                        .attr("fill-opacity", "1");
+                    div.style("opacity", 0);
+                }
+
             }).catch(function (error) {
                 console.error("Error al cargar el archivo geojson:", error);
             });

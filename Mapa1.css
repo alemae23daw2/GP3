@@ -38,11 +38,17 @@ nav a:hover {
 #mapa{
     margin: 1% auto;
     width: 800px;
-    height: 600px;
+    height: 500px;
 }
 
 #buscadors{
+    margin-top: 2%;
     position: absolute;
+}
+
+#buscadors label{
+    display: inline-block;
+    width: 80px;
 }
 
 select {
@@ -55,7 +61,7 @@ select {
 }
 
 #minmax{
-    top: 30%;
+    top: 40%;
     position: absolute;
     width: 250px;
 }
@@ -80,4 +86,27 @@ select {
 #minmax #min img{
     margin-top: 5px;
     float: left;
+}
+
+.tooltip{
+    position: absolute;
+    text-align: left;
+    width: auto;
+    height: auto;
+    background: white;
+    border: 1px solid #ddd;
+    pointer-events: none;
+    font: 15px sans-serif;
+    z-index: 2;
+    padding: 10px;
+    opacity: 0;
+    line-height: 18px;
+}
+
+.busqueda{
+    position: absolute;
+    right: 50px;
+    top: 30%;
+    width: 400px;
+    color: grey;
 }
