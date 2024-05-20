@@ -33,7 +33,7 @@ nav a:hover {
 .tooltip {
     position: absolute;
     text-align: center;
-    width: 80px;
+    width: 100px;
     height: 40px;
     padding: 5px;
     font: 12px sans-serif;
@@ -54,8 +54,8 @@ nav a:hover {
 .tooltip {
     position: absolute;
     text-align: center;
-    width: 150x;
-    height: 80px;
+    width: 400x;
+    height: 40px;
     padding: 10px;
     font: 12px sans-serif;
     background: #e3e3e3;

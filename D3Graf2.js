@@ -139,8 +139,8 @@ function initializeDonutChart(containerId, data, color) {
         .style("position", "absolute")
         .style("background-color", "#fff")
         .style("border", "3px solid #000")
-        .style("width", "200px")
-        .style("height", "80px")
+        .style("width", "190px")
+        .style("height", "70px")
         .style("box-shadow", "0 2px 4px rgba(0, 0, 0, 0.1)")
         .style("opacity", 0)
         .style("transition", "opacity 0.3s ease-in-out");
