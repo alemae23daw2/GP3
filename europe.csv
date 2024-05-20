@@ -1,0 +1,41 @@
+,country_name,Continent,region,local_name,capital,area,population,population_per_sq_km,male_life_expectancy,female_life_expectancy,birth_rate,death_rate,ISO3
+0,Austria,Europe,Western Europe,Österreich,Vienna,"83,879 km²","8,917,000",106.3,78.9,83.6,9.4,10.3,AUT
+1,Belgium,Europe,Western Europe,België / Belgique,Brussels,"30,530 km²","11,544,000",378.1,78.6,83.1,9.9,11.0,BEL
+2,France,Europe,Western Europe,France,Paris,"549,087 km²","67,380,000",122.7,79.2,85.3,10.9,9.9,FRA
+3,Germany,Europe,Western Europe,Deutschland,Berlin,"357,580 km²","83,161,000",232.6,78.6,83.4,9.3,11.9,DEU
+4,Liechtenstein,Europe,Western Europe,Liechtenstein,Vaduz,161 km²,"38,137",237.6,80.1,83.6,9.1,8.2,LIE
+5,Luxembourg,Europe,Western Europe,Luxembourg/Lëtzebuerg,Luxembourg,"2,590 km²","630,419",243.4,79.4,84.2,10.2,7.3,LUX
+6,Netherlands,Europe,Western Europe,Nederland,Amsterdam,"41,543 km²","17,442,000",419.8,79.8,83.1,9.7,9.7,NLD
+7,Switzerland,Europe,Western Europe,Schweiz / Suisse / Svizzera / Svizra,Bern,"41,290 km²","8,637,000",209.2,81.1,85.2,9.9,8.8,CHE
+8,Belarus,Europe,Eastern Europe,Weißrussland,Беларусь,"207,600 km²","9,380,000",45.18,69.3,79.4,9.3,13.0,BLR
+9,Bulgaria,Europe,Eastern Europe,България,Sofia,"111,000 km²","6,934,000",62.47,69.9,77.5,8.5,18.0,BGR
+10,Czechia,Europe,Eastern Europe,Czech Republic,"Česko, Česká republika","78,870 km²","10,698,000",135.6,75.3,81.3,10.3,12.1,CZE
+11,Hungary,Europe,Eastern Europe,Magyarország,Budapest,"93,030 km²","9,750,000",104.8,72.3,79.1,9.6,14.5,HUN
+12,Moldova,Europe,Eastern Europe,Moldau,Moldova,"33,850 km²","2,620,000",77.41,67.7,76.3,9.8,11.8,MDA
+13,Poland,Europe,Eastern Europe,Polska,Warsaw,"312,680 km²","37,899,000",121.2,72.6,80.8,9.4,12.6,POL
+14,Romania,Europe,Eastern Europe,România,Bucharest,"238,400 km²","19,258,000",80.78,70.5,78.4,9.2,15.4,ROU
+15,Russia,Europe,Eastern Europe,Russische Föderation,Россия / Rossija,"17,098,250 km²","144,104,000",8.428,66.5,76.4,9.8,14.6,RUS
+16,Slovakia,Europe,Eastern Europe,Slovensko,Bratislava,"49,030 km²","5,459,000",111.3,73.5,80.4,10.4,10.8,SVK
+17,Ukraine,Europe,Eastern Europe,Ukrajina / Україна,Kiev,"603,550 km²","44,135,000",73.13,66.4,76.2,7.8,15.9,UKR
+18,Denmark,Europe,Northern Europe,Danmark,Copenhagen,"42,920 km²","5,831,000",135.9,79.6,83.6,10.4,9.4,DNK
+19,Estonia,Europe,Northern Europe,Eesti,Tallinn,"45,340 km²","1,329,000",29.32,74.2,82.7,9.9,11.9,EST
+20,Finland,Europe,Northern Europe,Suomi,Helsinki,"338,450 km","5,530,000",16.34,79.4,85.0,8.4,10.0,FIN
+21,Iceland,Europe,Northern Europe,Ísland,Reykjavík,"103,000 km²","366,463",3.558,81.7,84.5,12.3,6.3,ISL
+22,Ireland,Europe,Northern Europe,Éire / Ireland,Dublin,"70,280 km²","4,986,000",70.94,80.4,84.1,11.2,6.4,IRL
+23,Latvia,Europe,Northern Europe,Latvija,Riga,"64,490 km²","1,900,000",29.47,70.9,80.1,9.2,15.2,LVA
+24,Lithuania,Europe,Northern Europe,Lietuva,Vilnius,"65,286 km²","2,795,000",42.81,70.1,80.0,9.0,15.6,LTU
+25,Norway,Europe,Northern Europe,Norge,Oslo,"385,203 km²","5,379,000",13.97,81.6,84.9,9.8,7.5,NOR
+26,Sweden,Europe,Northern Europe,Sverige,Stockholm,"447,430 km²","10,353,000",23.14,80.7,84.2,10.9,9.5,SWE
+27,United Kingdom,Europe,Northern Europe,Großbritannien und Nordirland,United Kingdom,"243,610 km²","67,215,000",275.9,79.0,82.9,10.2,10.4,GBR
+28,Albania,Europe,Southern Europe,Republika e Shqipërisë,Tirana,"28,750 km²","2,838,000",98.71,77.2,80.3,11.5,8.3,ALB
+29,Greece,Europe,Southern Europe,Ελλάδα / Elláda,Athens,"131,960 km²","10,701,000",81.09,78.6,83.7,7.9,12.2,GRC
+30,Malta,Europe,Southern Europe,Malta,Valletta,320 km²,"515,332","1,610",80.8,84.6,8.6,7.9,MLT
+31,Montenegro,Europe,Southern Europe,Црна Гора / Crna Gora / Mali i Zi,Podgorica,"13,810 km²","621,306",44.99,73.2,78.8,11.4,11.7,MNE
+32,Portugal,Europe,Southern Europe,Portugal,Lisbon,"92,226 km²","10,297,000",111.7,78.0,84.1,8.2,12.0,PRT
+33,Serbia,Europe,Southern Europe,Србија Srbija,Belgrade,"88,360 km²","6,899,000",78.08,71.4,77.2,8.9,16.9,SRB
+34,Slovenia,Europe,Southern Europe,Slovenija,Ljubljana,"20,675 km²","2,102,000",101.7,77.8,83.4,8.9,11.4,SVN
+35,Spain,Europe,Southern Europe,España,Madrid,"505,935 km²","47,363,000",93.62,79.7,85.1,7.1,10.4,ESP
+36,Italy,Europe,Southern Europe,Italia,Rome,"301,340 km²","60,359,546",200.2,78.5,83.4,8.6,7.9,ITA
+37,Turkey,Asia,Western Asia,Türkiye,Ankara,"783,356 km²","83,614,362",106.6,74.7,80.9,16.7,5.8,TUR
+38,North Macedonia,Europe,Southern Europe,Северна Македонија / Severna Makedonija,Skopje,"25,713 km²","2,083,374",80.9,74.4,78.9,10.2,8.1,MKD
+39,Croatia,Europe,Southern Europe,Hrvatska,Zagreb,"56,594 km²","4,076,246",72.0,78.3,81.6,9.4,12.3,HRV

@@ -44,7 +44,7 @@ function initializeBarChart(containerId, data, color, title) {
             tooltip.transition()
                 .duration(200)
                 .style("opacity", .9);
-            tooltip.html(`Any: ${d.Any}<br>Víctime: ${d.VíctimesAteses}`)
+            tooltip.html(`Any: ${d.Any}<br>Víctimes: ${d.VíctimesAteses}`)
                 .style("left", (event.pageX + 5) + "px")
                 .style("top", (event.pageY - 28) + "px");
         })
@@ -116,7 +116,7 @@ function initializeDonutChart(containerId, data, color) {
             const infoBoxLeft = width / 2 + radius + 70;
             const infoBoxTop = height / 2 - 40;
 
-            infoBox.html(`Païs: ${d.data.Country}<br>Suicidis: ${d.data.value}`)
+            infoBox.html(`País: ${d.data.Country}<br>Suicidis: ${d.data.value}`)
                 .style("left", `${infoBoxLeft}px`)
                 .style("top", `${infoBoxTop}px`);
         })
@@ -133,7 +133,7 @@ function initializeDonutChart(containerId, data, color) {
         .attr("x", 0)
         .attr("y", 0 - (height / 2) - margin.top / 2)
         .style("text-anchor", "middle")
-        .text("Suicidis per païs al 2015");
+        .text("Suicidis per país al 2015");
 
     d3.select("#info-box")
         .style("position", "absolute")
