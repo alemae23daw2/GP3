@@ -1,0 +1,44 @@
+    html {
+        background-color: #fbf8ff;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #fbf8ff;
+    }
+
+    nav {
+        background-color: #333;
+        color: #fff;
+        padding: 1em;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 0.5em 1em;
+        transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+        background-color: #575757;
+    }
+
+    .tooltip {
+        position: absolute;
+        text-align: center;
+        width: 80px;
+        height: 40px;
+        padding: 5px;
+        font: 12px sans-serif;
+        background: #1ee965;
+        border: 0;
+        border-radius: 8px;
+        pointer-events: none;
+        opacity: 0;
+    }
