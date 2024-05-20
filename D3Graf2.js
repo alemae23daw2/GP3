@@ -185,7 +185,7 @@ function transformDonutData(data) {
 loadData("V_ctimes_viol_ncia_masclista____mbit_parella_20240518.csv", data => {
     const transformedData = transformBarData(data);
 
-    initializeBarChart("#chart-container", transformedData, "#fb7053", "Víctimes de violencia mascliste – Ambit de Parella");
+    initializeBarChart("#chart-container", transformedData, "#fb7053", "Víctimes de violencia masclista – Ambit de Parella");
 
     d3.select("#thumbnail-initial").append("svg").attr("width", 100).attr("height", 100).append("rect")
         .attr("width", 100).attr("height", 100).attr("fill", "#fb7053");
