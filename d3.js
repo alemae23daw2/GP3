@@ -194,7 +194,6 @@ window.onload = () => {
                         .attr("fill-opacity", "1");
                     div.style("opacity", 0);
                 }
-
             }).catch(function (error) {
                 console.error("Error al cargar el archivo geojson:", error);
             });
