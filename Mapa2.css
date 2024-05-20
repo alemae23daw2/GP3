@@ -1,0 +1,118 @@
+html {
+    background-color: #fbf8ff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fbf8ff;
+}
+
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #575757;
+}
+
+.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 80px;
+    height: 40px;
+    padding: 5px;
+    font: 12px sans-serif;
+    background: #1ee965;
+    border: 0;
+    border-radius: 8px;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.thumbnails {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 150x;
+    height: 80px;
+    padding: 10px;
+    font: 12px sans-serif;
+    background: #1ee965;
+    border: 0;
+    border-radius: 8px;
+    pointer-events: none;
+    opacity: 0;
+    transition: width 0.3s, height 0.3s;
+}
+
+.thumbnail:hover+.tooltip {
+    width: 150px;
+    height: 150px;
+    opacity: .9;
+}
+
+.thumbnail {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+#thumbnail-initial {
+    background-color: #fb7053;
+}
+
+#thumbnail1 {
+    background-color: steelblue;
+}
+
+#thumbnail2 {
+    background-color: orange;
+}
+
+
+.info-box {
+    position: absolute;
+    background: linear-gradient(45deg, #ff8a00, #ffc700);
+    border: 2px solid #000;
+    border-radius: 20px;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 999;
+    color: #fff;
+}
+
+.info-box p {
+    margin: 0;
+}
+
+.info-box h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
