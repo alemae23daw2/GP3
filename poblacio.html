@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="poblacio.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .pais {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            width: 40%;
+            height: 450px;
+            margin-left: 1%;
+        }
+
+        .pais div {
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            width: 50%;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+            margin-left: 1%;
+        }
+
+        .pais div img {
+            color: black;
+            width: 15px;
+            height: 15px;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+
+        .pais div span {
+            font-weight: bold;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            display: flex;
+            justify-content: center;
+            column-gap: 100px;
+            align-items: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        #countrySelect {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #333;
+            width: 200px;
+        }
+
+        #countrySelect:hover {
+            border-color: #999;
+        }
+
+        #countrySelect:focus {
+            outline: none;
+            border-color: #66afe9;
+            box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
+        }
+
+        #graficPoblacio{
+            right: 5%;
+            top: 20%;
+            position: absolute;
+            border: 1px solid black;
+            width: 800px;
+            height: 500px;
+        }
+
+        .tooltip{
+            position: absolute;
+            text-align: left;
+            width: auto;
+            height: auto;
+            background: white;
+            border: 1px solid #ddd;
+            pointer-events: none;
+            font: 15px sans-serif;
+            z-index: 2;
+            padding: 10px;
+            opacity: 0;
+            line-height: 18px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Educació a la Unió Europea</a>
+        <a href="pagina2.html">Página 2</a>
+        <a href="pagina3.html">Página 3</a>
+    </nav>
+    <h1>Informació de
+        <select id="countrySelect">
+            <option value="AF">Afganistan</option>
+            <option value="AL">Albània</option>
+            <option value="DZ">Algèria</option>
+            <option value="AD">Andorra</option>
+            <option value="AO">Angola</option>
+            <option value="AG">Antigua i Barbuda</option>
+            <option value="AR">Argentina</option>
+            <option value="AM">Armènia</option>
+            <option value="AU">Austràlia</option>
+            <option value="AT">Àustria</option>
+            <option value="AZ">Azerbaidjan</option>
+            <option value="BS">Les Bahames</option>
+            <option value="BH">Bahrain</option>
+            <option value="BD">Bangladesh</option>
+            <option value="BB">Barbados</option>
+            <option value="BY">Bielorússia</option>
+            <option value="BE">Bèlgica</option>
+            <option value="BZ">Belize</option>
+            <option value="BJ">Benín</option>
+            <option value="BT">Bhutan</option>
+            <option value="BO">Bolívia</option>
+            <option value="BA">Bòsnia i Hercegovina</option>
+            <option value="BW">Botswana</option>
+            <option value="BR">Brasil</option>
+            <option value="BN">Brunei</option>
+            <option value="BG">Bulgària</option>
+            <option value="BF">Burkina Faso</option>
+            <option value="BI">Burundi</option>
+            <option value="CI">Costa d'Ivori</option>
+            <option value="CV">Cap Verd</option>
+            <option value="KH">Cambodja</option>
+            <option value="CM">Camerun</option>
+            <option value="CA">Canadà</option>
+            <option value="CF">República Centreafricana</option>
+            <option value="TD">Txad</option>
+            <option value="CL">Xile</option>
+            <option value="CN">Xina</option>
+            <option value="CO">Colòmbia</option>
+            <option value="KM">Comores</option>
+            <option value="CG">República del Congo</option>
+            <option value="CR">Costa Rica</option>
+            <option value="HR">Croàcia</option>
+            <option value="CU">Cuba</option>
+            <option value="CY">Xipre</option>
+            <option value="CZ">República Txeca</option>
+            <option value="CD">República Democràtica del Congo</option>
+            <option value="DK">Dinamarca</option>
+            <option value="DJ">Djibouti</option>
+            <option value="DM">Dominica</option>
+            <option value="DO">República Dominicana</option>
+            <option value="EC">Equador</option>
+            <option value="EG">Egipte</option>
+            <option value="SV">El Salvador</option>
+            <option value="GQ">Guinea Equatorial</option>
+            <option value="ER">Eritrea</option>
+            <option value="EE">Estònia</option>
+            <option value="ET">Etiòpia</option>
+            <option value="FJ">Fiji</option>
+            <option value="FI">Finlàndia</option>
+            <option value="FR">França</option>
+            <option value="GA">Gabon</option>
+            <option value="GM">Gàmbia</option>
+            <option value="GE">Geòrgia</option>
+            <option value="DE">Alemanya</option>
+            <option value="GH">Ghana</option>
+            <option value="GR">Grècia</option>
+            <option value="GD">Grenada</option>
+            <option value="GT">Guatemala</option>
+            <option value="GN">Guinea</option>
+            <option value="GW">Guinea Bissau</option>
+            <option value="GY">Guyana</option>
+            <option value="HT">Haití</option>
+            <option value="HN">Hondures</option>
+            <option value="HU">Hongria</option>
+            <option value="IS">Islàndia</option>
+            <option value="IN">Índia</option>
+            <option value="ID">Indonèsia</option>
+            <option value="IR">Iran</option>
+            <option value="IQ">Iraq</option>
+            <option value="IE">Irlanda</option>
+            <option value="IL">Israel</option>
+            <option value="IT">Itàlia</option>
+            <option value="JM">Jamaica</option>
+            <option value="JP">Japó</option>
+            <option value="JO">Jordània</option>
+            <option value="KZ">Kazakhstan</option>
+            <option value="KE">Kenya</option>
+            <option value="KI">Kiribati</option>
+            <option value="KW">Kuwait</option>
+            <option value="KG">Kirguizistan</option>
+            <option value="LA">Laos</option>
+            <option value="LV">Letònia</option>
+            <option value="LB">Líban</option>
+            <option value="LS">Lesotho</option>
+            <option value="LR">Libèria</option>
+            <option value="LY">Líbia</option>
+            <option value="LI">Liechtenstein</option>
+            <option value="LT">Lituània</option>
+            <option value="LU">Luxemburg</option>
+            <option value="MG">Madagascar</option>
+            <option value="MW">Malawi</option>
+            <option value="MY">Malàisia</option>
+            <option value="MV">Maldives</option>
+            <option value="ML">Mali</option>
+            <option value="MT">Malta</option>
+            <option value="MH">Illes Marshall</option>
+            <option value="MR">Mauritània</option>
+            <option value="MU">Maurici</option>
+            <option value="MX">Mèxic</option>
+            <option value="FM">Estats Federats de Micronèsia</option>
+            <option value="MD">Moldàvia</option>
+            <option value="MC">Mònaco</option>
+            <option value="MN">Mongòlia</option>
+            <option value="ME">Montenegro</option>
+            <option value="MA">Marroc</option>
+            <option value="MZ">Moçambic</option>
+            <option value="MM">Myanmar</option>
+            <option value="NA">Namíbia</option>
+            <option value="NP">Nepal</option>
+            <option value="NL">Països Baixos</option>
+            <option value="NZ">Nova Zelanda</option>
+            <option value="NI">Nicaragua</option>
+            <option value="NE">Níger</option>
+            <option value="NG">Nigèria</option>
+            <option value="KP">Corea del Nord</option>
+            <option value="NO">Noruega</option>
+            <option value="OM">Oman</option>
+            <option value="PK">Pakistan</option>
+            <option value="PW">Palau</option>
+            <option value="PA">Panamà</option>
+            <option value="PG">Papua Nova Guinea</option>
+            <option value="PY">Paraguai</option>
+            <option value="PE">Perú</option>
+            <option value="PH">Filipines</option>
+            <option value="PL">Polònia</option>
+            <option value="PT">Portugal</option>
+            <option value="QA">Qatar</option>
+            <option value="RO">Romania</option>
+            <option value="RU">Rússia</option>
+            <option value="RW">Ruanda</option>
+            <option value="KN">Saint Kitts i Nevis</option>
+            <option value="LC">Santa Llúcia</option>
+            <option value="VC">Saint Vincent i les Grenadines</option>
+            <option value="WS">Samoa</option>
+            <option value="SM">San Marino</option>
+            <option value="ST">São Tomé i Príncipe</option>
+            <option value="SA">Aràbia Saudita</option>
+            <option value="SN">Senegal</option>
+            <option value="RS">Sèrbia</option>
+            <option value="SC">Seychelles</option>
+            <option value="SL">Sierra Leone</option>
+            <option value="SG">Singapur</option>
+            <option value="SK">Eslovàquia</option>
+            <option value="SI">Eslovènia</option>
+            <option value="SB">Illes Salomó</option>
+            <option value="SO">Somàlia</option>
+            <option value="ZA">Sud-àfrica</option>
+            <option value="KR">Corea del Sud</option>
+            <option value="SS">Sudan del Sud</option>
+            <option value="ES">Espanya</option>
+            <option value="LK">Sri Lanka</option>
+            <option value="SD">Sudan</option>
+            <option value="SR">Surinam</option>
+            <option value="SE">Suècia</option>
+            <option value="CH">Suïssa</option>
+            <option value="SY">Síria</option>
+            <option value="TJ">Tadjikistan</option>
+            <option value="TZ">Tanzània</option>
+            <option value="TH">Tailàndia</option>
+            <option value="TL">Timor Oriental</option>
+            <option value="TG">Togo</option>
+            <option value="TO">Tonga</option>
+            <option value="TT">Trinitat i Tobago</option>
+            <option value="TN">Tunísia</option>
+            <option value="TR">Turquia</option>
+            <option value="TM">Turkmenistan</option>
+            <option value="TV">Tuvalu</option>
+            <option value="UG">Uganda</option>
+            <option value="UA">Ucraïna</option>
+            <option value="AE">Emirats Àrabs Units</option>
+            <option value="GB">Regne Unit</option>
+            <option value="US">Estats Units d'Amèrica</option>
+            <option value="UY">Uruguai</option>
+            <option value="UZ">Uzbekistan</option>
+            <option value="VU">Vanuatu</option>
+            <option value="VE">Veneçuela</option>
+            <option value="VN">Vietnam</option>
+            <option value="YE">Iemen</option>
+            <option value="MM">Myanmar</option>
+            <option value="NA">Namíbia</option>
+            <option value="NP">Nepal</option>
+            <option value="NL">Países Bajos</option>
+            <option value="NZ">Nueva Zelanda</option>
+            <option value="NI">Nicaragua</option>
+            <option value="NE">Níger</option>
+            <option value="NG">Nigeria</option>
+            <option value="KP">Corea del Norte</option>
+            <option value="NO">Noruega</option>
+            <option value="OM">Omán</option>
+            <option value="PK">Pakistán</option>
+            <option value="PW">Palaos</option>
+            <option value="PA">Panamá</option>
+            <option value="PG">Papúa Nueva Guinea</option>
+            <option value="PY">Paraguay</option>
+            <option value="PE">Perú</option>
+            <option value="PH">Filipinas</option>
+            <option value="PL">Polonia</option>
+            <option value="PT">Portugal</option>
+            <option value="QA">Catar</option>
+            <option value="RO">Rumania</option>
+            <option value="RU">Rusia</option>
+            <option value="RW">Ruanda</option>
+            <option value="KN">San Cristóbal y Nieves</option>
+            <option value="LC">Santa Lucía</option>
+            <option value="VC">San Vicente y las Granadinas</option>
+            <option value="WS">Samoa</option>
+            <option value="SM">San Marino</option>
+            <option value="ST">Santo Tomé y Príncipe</option>
+            <option value="SA">Arabia Saudita</option>
+            <option value="SN">Senegal</option>
+            <option value="RS">Serbia</option>
+            <option value="SC">Seychelles</option>
+            <option value="SL">Sierra Leona</option>
+            <option value="SG">Singapur</option>
+            <option value="SK">Eslovaquia</option>
+            <option value="SI">Eslovenia</option>
+            <option value="SB">Islas Salomón</option>
+            <option value="SO">Somalia</option>
+            <option value="ZA">Sudáfrica</option>
+            <option value="KR">Corea del Sur</option>
+            <option value="SS">Sudán del Sur</option>
+            <option value="ES">España</option>
+            <option value="LK">Sri Lanka</option>
+            <option value="SD">Sudán</option>
+            <option value="SR">Surinam</option>
+            <option value="SE">Suecia</option>
+            <option value="CH">Suiza</option>
+            <option value="SY">Siria</option>
+            <option value="TJ">Tayikistán</option>
+            <option value="TZ">Tanzania</option>
+            <option value="TH">Tailandia</option>
+            <option value="TL">Timor Oriental</option>
+            <option value="TG">Togo</option>
+            <option value="TO">Tonga</option>
+            <option value="TT">Trinidad y Tobago</option>
+            <option value="TN">Túnez</option>
+            <option value="TR">Turquía</option>
+            <option value="TM">Turkmenistán</option>
+            <option value="TV">Tuvalu</option>
+            <option value="UG">Uganda</option>
+            <option value="UA">Ucrania</option>
+            <option value="AE">Emiratos Árabes Unidos</option>
+            <option value="GB">Reino Unido</option>
+            <option value="US">Estados Unidos de América</option>
+            <option value="UY">Uruguay</option>
+            <option value="UZ">Uzbekistán</option>
+            <option value="VU">Vanuatu</option>
+            <option value="VE">Venezuela</option>
+            <option value="VN">Vietnam</option>
+            <option value="YE">Yemen</option>
+            <option value="ZM">Zambia</option>
+            <option value="ZW">Zimbabue</option>
+        </select>
+    </h1>
+
+    <div class="pais">
+        <div class="densitat">Densitat: <span></span></div>
+        <div class="abreviacio">Abreviació: <span></span></div>
+        <div class="terres-agrícoles">Terres Agrícoles (%): <span></span></div>
+        <div class="superfície">Superfície (Km2): <span></span></div>
+        <div class="taxa-de-naixement">Taxa de Naixement: <span></span></div>
+        <div class="codi-de-trucada">Codi de Trucada: <span></span></div>
+        <div class="capital">Capital: <span></span></div>
+        <div class="emissions-de-co2">Emissions de CO2: <span></span></div>
+        <div class="moneda">Moneda: <span></span></div>
+        <div class="taxa-de-fecunditat">Taxa de Fecunditat: <span></span></div>
+        <div class="àrea-boscada">Àrea Boscada (%): <span></span></div>
+        <div class="preu-de-la-gasolina">Preu de la Gasolina: <span></span></div>
+        <div class="pib">PIB: <span></span></div>
+        <div class="educació-primària">Educació Primària (%): <span></span></div>
+        <div class="educació-superior">Educació Superior (%): <span></span></div>
+        <div class="mortalitat-infantil">Mortalitat Infantil: <span></span></div>
+        <div class="ciutat-més-gran">Ciutat Més Gran: <span></span></div>
+        <div class="esperança-de-vida">Esperança de Vida: <span></span></div>
+        <div class="mortalitat-materna">Mortalitat Materna: <span></span></div>
+        <div class="salari-mínim">Salari Mínim: <span></span></div>
+        <div class="idioma-oficial">Idioma Oficial: <span></span></div>
+        <div class="despeses-de-salut">Despeses de Salut (%): <span></span></div>
+        <div class="població">Població: <span></span><img id="morePoblacio" src="more.svg"></div>
+        <div class="taxa-d'impostos">Taxa d'Impostos (%): <span></span></div>
+        <div class="taxa-d'impostos-total">Taxa d'Impostos Total: <span></span></div>
+        <div class="taxa-d'atur">Taxa d'Atur: <span></span></div>
+    </div>
+    <div id="graficPoblacio"></div>
+</body>
+
+</html>
