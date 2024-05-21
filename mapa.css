@@ -1,0 +1,269 @@
+* {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+b {
+  font-weight: bold;
+  font-size: 1.05em;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  color: #777;
+}
+
+#wrapper {
+  width: 985px;
+  font-size: 1em;
+  margin: 10px;
+}
+
+div.tooltip {
+  position: absolute;
+  text-align: left;
+  width: 150px;
+  height: auto;
+  background: white;
+  border: 1px solid #ddd;
+  pointer-events: none;
+  font: 15px sans-serif;
+  z-index: 2;
+  padding: 10px;
+  opacity: 0;
+  line-height: 18px;
+}
+
+.path:hover {
+  cursor: pointer;
+}
+
+#dades {
+  float: left;
+  width: 360px;
+  pointer-events: none;
+}
+
+.inicio {
+  padding-left: 4px;
+  float: left;
+  font-size: 0.8em;
+}
+
+.final {
+  padding-right: 23px;
+  float: right;
+  font-size: 0.8em;
+}
+
+#trimestre {
+  font-size: 20px;
+  float: left;
+  height: 10px;
+  width: 200px;
+  padding-top: 30px;
+}
+
+#any {
+  float: left;
+  font-size: 3em;
+  padding-top: 10px;
+  width: 300px;
+  border-bottom: #777 1px solid;
+}
+
+#maxMin {
+  float: left;
+  width: 250px;
+}
+
+.masCinco .color {
+  background-color: #9FFF88;
+}
+
+.masQuince .color {
+  background-color: #7EF06E;
+}
+
+.masVeinticinco .color {
+  background-color: #5EE053;
+}
+
+.masTreintaYCinco .color {
+  background-color: #3DD139;
+}
+
+.masCuarenta .color {
+  background-color: #1CC11E;
+}
+
+.textoLeyenda {
+  height: 10px;
+  width: 70px;
+  float: left;
+}
+
+.textoLeyenda span {
+  position: relative;
+  left: 35px;
+  text-align: center;
+  top: 25px;
+}
+
+.move:hover {
+  cursor: pointer;
+}
+
+#datosMapa {
+  float: left;
+  width: 985px;
+  height: 520px;
+}
+
+#mapas {
+  float: right;
+  width: 600px;
+  height: 520px;
+  margin: 0px 20px 0 0;
+}
+
+#canarias {
+  float: right;
+  height: 100px;
+  width: 240px;
+  top: -115px;
+  left: 360px;
+  position: relative;
+  border-top: solid 1px grey;
+  border-left: solid 1px grey;
+  border-radius: 30px 0;
+}
+
+nav {
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  column-gap: 100px;
+  align-items: center;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: #575757;
+}
+
+#trimestres {
+  padding: 8px 16px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+#trimestres option {
+  padding: 8px;
+}
+
+#mediaParo {
+  margin-top: 20px;
+  float: left;
+  width: 300px;
+  font-size: 2em;
+}
+
+.mediaNacional {
+  margin-bottom: 20px;
+  border-bottom: solid 1px #777;
+  width: 300px;
+}
+
+#maximoParo {
+  font-size: 2em;
+  padding-top: 20px;
+  float: right;
+}
+
+#minimoParo {
+  margin-top: 20px;
+  float: right;
+  font-size: 2em;
+}
+
+.icono {
+  float: left;
+}
+
+.iconoMaximo {
+  height: 30px;
+  width: 30px;
+  float: right;
+  margin: 20px 10px 0 0;
+  background: url(mayor.svg);
+}
+
+.iconoMinimo {
+  height: 30px;
+  width: 30px;
+  background: url(menor.svg);
+  float: right;
+  margin: 20px 10px 0 0;
+}
+
+#slider {
+  float: left;
+  width: 935px;
+  height: 45px;
+}
+
+#leyenda {
+  display: inline-block;
+  width: 355px;
+  height: 40px;
+  font-size: 0.9em;
+  text-align: center;
+  padding: 10px 10px 10px 0;
+  margin-top: 105px;
+  pointer-events: none;
+}
+
+.key {
+  float: left;
+  width: 70px;
+  border-right: 1px solid #202020;
+  height: 20px;
+}
+
+.key:last-child {
+  border-right: none;
+}

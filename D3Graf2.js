@@ -75,7 +75,7 @@ function initializeBarChart(containerId, data, color, title) {
         .attr("y", height + margin.bottom - 3)
         .style("font-size", "12px")
         .style("font-family", "sans-serif")
-        .text("Source: Dades Obertes de Catalunya ");
+        .text("Source: Dades Obertes de Catalunya");
 }
 
 
@@ -139,8 +139,8 @@ function initializeDonutChart(containerId, data, color) {
         .style("position", "absolute")
         .style("background-color", "#fff")
         .style("border", "3px solid #000")
-        .style("width", "190px")
-        .style("height", "70px")
+        .style("width", "230px")
+        .style("height", "30px")
         .style("box-shadow", "0 2px 4px rgba(0, 0, 0, 0.1)")
         .style("opacity", 0)
         .style("transition", "opacity 0.3s ease-in-out");
@@ -181,7 +181,6 @@ function transformDonutData(data) {
         }));
 }
 
-
 loadData("V_ctimes_viol_ncia_masclista____mbit_parella_20240518.csv", data => {
     const transformedData = transformBarData(data);
 
@@ -190,12 +189,18 @@ loadData("V_ctimes_viol_ncia_masclista____mbit_parella_20240518.csv", data => {
     d3.select("#thumbnail-initial").append("svg").attr("width", 100).attr("height", 100).append("rect")
         .attr("width", 100).attr("height", 100).attr("fill", "#fb7053");
 
-    d3.select("#thumbnail-initial").on("click", () => initializeBarChart("#chart-container", transformedData, "#fb7053", "Víctimes de violencia mascliste – Ambit de Parella"));
+    d3.select("#thumbnail-initial").on("click", () => initializeBarChart("#chart-container", transformedData, "#fb7053", "Víctimes de violencia masclista – Ambit de Parella"));
 
     loadData("30_merged_dataset_v00_final.csv", data2 => {
         const transformedData2 = transformDonutData(data2);
-        d3.select("#thumbnail1").append("svg").attr("width", 100).attr("height", 100).append("rect")
-            .attr("width", 100).attr("height", 100).attr("fill", "steelblue");
+        d3.select("#thumbnail1")
+        .append("svg")
+        .attr("width", 100)
+        .attr("height", 100)
+        .append("rect")
+        .attr("width", 100)
+        .attr("height", 100)
+        .attr("fill", "steelblue");
 
         d3.select("#thumbnail1").on("click", () => initializeDonutChart("#chart-container", transformedData2, d3.scaleOrdinal(d3.schemeCategory10)));
     });

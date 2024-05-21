@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="lib/d3.js" type="text/javascript"></script>
+    <link href="mapa.css" rel="stylesheet" type="text/css"/>
+    <title>Atur per provincies d'Espanya</title>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">Educació a la Unió Europea</a>
+      <a href="index2.html">Gràfiques</a>
+      <a href="poblacio.html">Dades</a>
+      <a href="index3.html">Atur a Espanya</a>
+    </nav>
+    <div id="wrapper">
+      <select id="trimestres">
+        <option value="41">> 2015 2n Trimestre</option>
+        <option value="40">> 2015 1er Trimestre</option>
+        <option value="39">> 2014 4t Trimestre</option>
+        <option value="38">> 2014 3er Trimestre</option>
+        <option value="37">> 2014 2n Trimestre</option>
+        <option value="36">> 2014 1er Trimestre</option>
+        <option value="34">> 2013 4t Trimestre</option>
+        <option value="34">> 2013 3er Trimestre</option>
+        <option value="33">> 2013 2n Trimestre</option>
+        <option value="32">> 2013 1er Trimestre</option>
+        <option value="31">> 2012 4t Trimestre</option>
+        <option value="30">> 2012 3er Trimestre</option>
+        <option value="29">> 2012 2n Trimestre</option>
+        <option value="28">> 2012 1er Trimestre</option>
+        <option value="27">> 2011 4t Trimestre</option>
+        <option value="26">> 2011 3er Trimestre</option>
+        <option value="25">> 2011 2n Trimestre</option>
+        <option value="24">> 2011 1er Trimestre</option>
+        <option value="23">> 2010 4t Trimestre</option>
+        <option value="22">> 2010 3er Trimestre</option>
+        <option value="21">> 2010 2n Trimestre</option>
+        <option value="20">> 2010 1er Trimestre</option>
+        <option value="19">> 2009 4t Trimestre</option>
+        <option value="18">> 2009 3er Trimestre</option>
+        <option value="17">> 2009 2n Trimestre</option>
+        <option value="16">> 2009 1er Trimestre</option>
+        <option value="15">> 2008 4t Trimestre</option>
+        <option value="14">> 2008 3er Trimestre</option>
+        <option value="13">> 2008 2n Trimestre</option>
+        <option value="12">> 2008 1er Trimestre</option>
+        <option value="11">> 2007 4t Trimestre</option>
+        <option value="10">> 2007 3er Trimestre</option>
+        <option value="9">> 2007 2n Trimestre</option>
+        <option value="8">> 2007 1er Trimestre</option>
+        <option value="7">> 2006 4t Trimestre</option>
+        <option value="6">> 2006 3er Trimestre</option>
+        <option value="5">> 2006 2n Trimestre</option>
+        <option value="4">> 2006 1er Trimestre</option>
+        <option value="3">> 2005 4t Trimestre</option>
+        <option value="2">> 2005 3er Trimestre</option>
+        <option value="1">> 2005 2n Trimestre</option>
+        <option value="0">> 2005 1er Trimestre</option>
+    </select>
+    
+      <div id="dadesMapa">
+        <div id="dades">
+          <div id="tasa-parados">
+            <div id="trimestre"></div>
+            <div id="any"></div>
+          </div>
+          <div id="maxMin">
+            <br>
+            <div class="icono">
+              <div id="maximoParo"></div>
+              <div class="iconoMaximo"></div>
+            </div>
+            <div class="icono">
+              <div id="minimoParo"></div>
+              <div class="iconoMinimo"></div>
+            </div>
+          </div>
+        </div>
+        <div id="mapas">
+          <div id="mapa"></div>
+        </div>
+        <div id="leyenda">
+          <div class="key">
+            <div class="masCinco">
+              <div class="textoLeyenda color"><span>10%</span></div>
+            </div>
+          </div>
+          <div class="key">
+            <div class="masQuince">
+              <div class="textoLeyenda color"><span>20%</span></div>
+            </div>
+          </div>
+          <div class="key">
+            <div class="masVeinticinco">
+              <div class="textoLeyenda color"><span>30%</span></div>
+            </div>
+          </div>
+          <div class="key">
+            <div class="masTreintaYCinco">
+              <div class="textoLeyenda color"><span>40%</span></div>
+            </div>
+          </div>
+          <div class="key">
+            <div class="masCuarenta">
+              <div class="textoLeyenda color"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="mapa.js" type="text/javascript"></script>
+    </div>
+  </body>
+</html>
